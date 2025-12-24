@@ -4,10 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CoreCloud</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
-      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1500&q=80")
+        no-repeat center center fixed;
       background-size: cover;
     }
     .overlay {
@@ -15,41 +18,286 @@
     }
   </style>
 </head>
-<body class="h-screen relative">
+
+<body class="min-h-screen relative">
 
   <div class="overlay w-full h-full absolute top-0 left-0 z-0"></div>
 
   <div class="absolute top-6 left-6 z-20 flex items-center space-x-3">
-    <img src="photo.png" alt="CoreCloud Logo" class="w-12 h-12 object-contain">
+    <img src="photo.png" alt="CoreCloud logo" class="w-12 h-12 object-contain">
     <span class="text-white text-2xl font-bold">CoreCloud</span>
   </div>
 
-  <div class="relative z-10 h-full flex items-center justify-center px-6">
-    <div class="max-w-6xl w-full bg-white bg-opacity-90 rounded-3xl shadow-2xl px-6 lg:px-12 py-16 flex flex-col-reverse md:flex-row items-center">
+  <main class="relative z-10 min-h-screen flex flex-col px-6 py-12">
+    <div class="max-w-6xl w-full mx-auto bg-white/90 rounded-3xl shadow-2xl px-6 lg:px-12 py-12">
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-1/2 text-center md:text-left space-y-6">
+          <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+            Welcome to <span class="text-blue-600">CoreCloud</span>
+          </h1>
 
-      <div class="md:w-1/2 text-center md:text-left space-y-6">
-        <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
-          Welcome to <span class="text-blue-600">CoreCloud</span>
-        </h1>
+          <div class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full shadow-md">
+            Fully online with live instructor led training
+          </div>
 
-        <div class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full shadow-md">
-           100% Online • Live Instructor-led Training
+          <p class="text-lg text-gray-700">
+            CoreCloud helps you learn cloud engineering with practical lessons, real projects, and clear guidance from an experienced instructor. You can learn from anywhere and still get live support when you need it.
+          </p>
+
+          <p class="text-lg text-gray-700">
+            Fill the registration form below and your details will be sent directly to our competents support team so we can contact you.
+          </p>
         </div>
 
-        <p class="text-lg text-gray-700 mt-4">
-          Empowering the next generation of cloud engineers with hands on training, real world projects, and expert mentorship all from the comfort of your home.
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="image.PNG"
+            alt="Fayemi Abraham cloud instructor at CoreCloud"
+            loading="lazy"
+            class="w-72 h-72 object-cover rounded-full border-4 border-blue-600 shadow-lg"
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl w-full mx-auto mt-10">
+      <form
+        id="registerForm"
+        action="https://formsubmit.co/your@email.com"
+        method="POST"
+        class="bg-white/95 rounded-3xl shadow-2xl px-6 lg:px-12 py-10 space-y-5"
+        novalidate
+      >
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New CoreCloud Registration">
+
+        <input type="hidden" name="country_name" id="country_name" value="">
+        <input type="hidden" name="country_code" id="country_code" value="">
+        <input type="hidden" name="full_phone" id="full_phone" value="">
+
+        <h2 class="text-3xl font-bold text-gray-900 text-center">
+          Registration form
+        </h2>
+
+        <p class="text-gray-700 text-center">
+          Please enter your details correctly so we can reach you without delay.
         </p>
 
-        <a href="https://www.corecloud.click" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition">
-          Join Us Now
-        </a>
-      </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Full name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              minlength="2"
+              placeholder="Enter your full name"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            >
+          </div>
 
-      <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
-        <img src="image.PNG" alt="Fayemi Abraham" class="w-72 h-72 object-cover rounded-full border-4 border-blue-600 shadow-lg">
-      </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+            <input
+              type="email"
+              name="email"
+              required
+              inputmode="email"
+              autocomplete="email"
+              placeholder="Enter your email address"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            >
+          </div>
+        </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+            <select
+              id="countrySelect"
+              name="country"
+              required
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white"
+            >
+              <option value="" selected disabled>Select your country</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone number</label>
+            <div class="flex gap-2">
+              <div
+                class="w-32 flex items-center justify-center px-3 py-3 border rounded-lg bg-gray-50 text-gray-900 font-semibold"
+                id="dialCodeBox"
+              >
+                Code
+              </div>
+
+              <input
+                id="phoneInput"
+                type="tel"
+                name="phone_local"
+                required
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="Enter your phone number"
+                class="flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              >
+            </div>
+            <p class="text-xs text-gray-600 mt-1">
+              Enter numbers only. Your country code will be added automatically.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">What do you want to learn</label>
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Tell us what you want to learn and your current level"
+            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition"
+        >
+          Submit registration
+        </button>
+
+        <p id="errorBox" class="hidden text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3"></p>
+      </form>
+
+      <p class="text-center text-white/90 text-sm mt-6">
+        CoreCloud will use your details only to contact you about training.
+      </p>
     </div>
-  </div>
+  </main>
+
+  <script>
+    const countries = [
+      { name: "Italy", code: "+39" },
+      { name: "Nigeria", code: "+234" },
+      { name: "Germany", code: "+49" },
+      { name: "United Kingdom", code: "+44" },
+      { name: "United States", code: "+1" },
+      { name: "Canada", code: "+1" },
+      { name: "France", code: "+33" },
+      { name: "Spain", code: "+34" },
+      { name: "Netherlands", code: "+31" },
+      { name: "Belgium", code: "+32" },
+      { name: "Switzerland", code: "+41" },
+      { name: "Austria", code: "+43" },
+      { name: "Ireland", code: "+353" },
+      { name: "Portugal", code: "+351" },
+      { name: "Sweden", code: "+46" },
+      { name: "Norway", code: "+47" },
+      { name: "Denmark", code: "+45" },
+      { name: "Finland", code: "+358" },
+      { name: "Poland", code: "+48" },
+      { name: "Greece", code: "+30" },
+      { name: "Turkey", code: "+90" },
+      { name: "United Arab Emirates", code: "+971" },
+      { name: "Saudi Arabia", code: "+966" },
+      { name: "South Africa", code: "+27" },
+      { name: "Ghana", code: "+233" },
+      { name: "Kenya", code: "+254" }
+    ];
+
+    const countrySelect = document.getElementById("countrySelect");
+    const dialCodeBox = document.getElementById("dialCodeBox");
+    const phoneInput = document.getElementById("phoneInput");
+    const form = document.getElementById("registerForm");
+    const errorBox = document.getElementById("errorBox");
+
+    const hiddenCountryName = document.getElementById("country_name");
+    const hiddenCountryCode = document.getElementById("country_code");
+    const hiddenFullPhone = document.getElementById("full_phone");
+
+    countries
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .forEach((c) => {
+        const opt = document.createElement("option");
+        opt.value = c.name;
+        opt.textContent = c.name;
+        opt.dataset.code = c.code;
+        countrySelect.appendChild(opt);
+      });
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.classList.remove("hidden");
+    }
+
+    function clearError() {
+      errorBox.textContent = "";
+      errorBox.classList.add("hidden");
+    }
+
+    function setDialCodeFromCountry() {
+      const selected = countrySelect.options[countrySelect.selectedIndex];
+      const code = selected && selected.dataset ? selected.dataset.code : "";
+
+      if (!code) {
+        dialCodeBox.textContent = "Code";
+        hiddenCountryName.value = "";
+        hiddenCountryCode.value = "";
+        return;
+      }
+
+      dialCodeBox.textContent = code;
+      hiddenCountryName.value = selected.value;
+      hiddenCountryCode.value = code;
+    }
+
+    phoneInput.addEventListener("input", () => {
+      phoneInput.value = phoneInput.value.replace(/\D/g, "");
+    });
+
+    countrySelect.addEventListener("change", () => {
+      setDialCodeFromCountry();
+      clearError();
+    });
+
+    function validatePhone(localDigits) {
+      if (!localDigits) return "Please enter your phone number";
+      if (!/^\d+$/.test(localDigits)) return "Please use numbers only for the phone number";
+      if (localDigits.length < 6) return "Your phone number looks too short";
+      if (localDigits.length > 14) return "Your phone number looks too long";
+      return "";
+    }
+
+    form.addEventListener("submit", (e) => {
+      clearError();
+
+      const selected = countrySelect.options[countrySelect.selectedIndex];
+      const code = selected && selected.dataset ? selected.dataset.code : "";
+      const local = phoneInput.value.trim();
+
+      if (!selected || !selected.value || !code) {
+        e.preventDefault();
+        showError("Please choose your country");
+        countrySelect.focus();
+        return;
+      }
+
+      const phoneError = validatePhone(local);
+      if (phoneError) {
+        e.preventDefault();
+        showError(phoneError);
+        phoneInput.focus();
+        return;
+      }
+
+      hiddenCountryName.value = selected.value;
+      hiddenCountryCode.value = code;
+      hiddenFullPhone.value = code + local;
+    });
+
+    setDialCodeFromCountry();
+  </script>
+
 </body>
 </html>
