@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CoreCloud</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,102 +23,88 @@
 
   <div class="overlay w-full h-full absolute top-0 left-0 z-0"></div>
 
-  <div class="absolute top-6 left-6 z-20 flex items-center space-x-3">
+  <header class="absolute top-6 left-6 z-20 flex items-center space-x-3">
     <img src="photo.png" alt="CoreCloud logo" class="w-12 h-12 object-contain">
     <span class="text-white text-2xl font-bold">CoreCloud</span>
-  </div>
+  </header>
 
-  <main class="relative z-10 min-h-screen flex flex-col px-6 py-12">
-    <div class="max-w-6xl w-full mx-auto bg-white/90 rounded-3xl shadow-2xl px-6 lg:px-12 py-12">
+  <main class="relative z-10 px-6 py-12">
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto bg-white/90 rounded-3xl shadow-2xl px-6 lg:px-12 py-12">
       <div class="flex flex-col md:flex-row items-center gap-10">
-        <div class="md:w-1/2 text-center md:text-left space-y-6">
+        <div class="md:w-1/2 space-y-6 text-center md:text-left">
           <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
             Welcome to <span class="text-blue-600">CoreCloud</span>
           </h1>
 
-          <div class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full shadow-md">
-            Fully online with live instructor led training
-          </div>
-
           <p class="text-lg text-gray-700">
-            CoreCloud helps you learn cloud engineering with practical lessons, real projects, and clear guidance from an experienced instructor. You can learn from anywhere and still get live support when you need it.
+            CoreCloud helps you build real cloud engineering skills through practical training, hands on projects, and clear guidance from an experienced instructor. You can learn from anywhere and still receive live support.
           </p>
 
           <p class="text-lg text-gray-700">
-            Fill the registration form below and your details will be sent directly to our competents support team so we can contact you.
+            Register below and we will contact you with the next steps.
           </p>
         </div>
 
         <div class="md:w-1/2 flex justify-center">
           <img
             src="image.PNG"
-            alt="Fayemi Abraham cloud instructor at CoreCloud"
+            alt="CoreCloud instructor"
             loading="lazy"
             class="w-72 h-72 object-cover rounded-full border-4 border-blue-600 shadow-lg"
           >
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="max-w-6xl w-full mx-auto mt-10">
+    <!-- Registration Section -->
+    <section class="max-w-6xl mx-auto mt-12">
+
+      <!-- Form -->
       <form
         id="registerForm"
-        action="https://formsubmit.co/your@email.com"
+        action="https://formsubmit.co/corecloud.info@gmail.com"
         method="POST"
-        class="bg-white/95 rounded-3xl shadow-2xl px-6 lg:px-12 py-10 space-y-5"
+        class="bg-white/95 rounded-3xl shadow-2xl px-6 lg:px-12 py-10 space-y-6"
+        target="hiddenFrame"
         novalidate
       >
+
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="New CoreCloud Registration">
 
-        <input type="hidden" name="country_name" id="country_name" value="">
-        <input type="hidden" name="country_code" id="country_code" value="">
-        <input type="hidden" name="full_phone" id="full_phone" value="">
+        <input type="hidden" name="country_name" id="country_name">
+        <input type="hidden" name="country_code" id="country_code">
+        <input type="hidden" name="full_phone" id="full_phone">
 
         <h2 class="text-3xl font-bold text-gray-900 text-center">
           Registration form
         </h2>
 
         <p class="text-gray-700 text-center">
-          Please enter your details correctly so we can reach you without delay.
+          Please enter your details correctly so we can reach you.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Full name</label>
-            <input
-              type="text"
-              name="name"
-              required
-              minlength="2"
-              placeholder="Enter your full name"
-              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-            >
+            <input type="text" name="name" required minlength="2"
+              class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-600">
           </div>
 
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
-            <input
-              type="email"
-              name="email"
-              required
-              inputmode="email"
-              autocomplete="email"
-              placeholder="Enter your email address"
-              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-            >
+            <input type="email" name="email" required
+              class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-600">
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Country</label>
-            <select
-              id="countrySelect"
-              name="country"
-              required
-              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white"
-            >
+            <select id="countrySelect" required
+              class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-600 bg-white">
               <option value="" selected disabled>Select your country</option>
             </select>
           </div>
@@ -126,177 +112,281 @@
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Phone number</label>
             <div class="flex gap-2">
-              <div
-                class="w-32 flex items-center justify-center px-3 py-3 border rounded-lg bg-gray-50 text-gray-900 font-semibold"
-                id="dialCodeBox"
-              >
+              <div id="dialCodeBox"
+                class="w-32 flex items-center justify-center border rounded-lg bg-gray-50 font-semibold">
                 Code
               </div>
-
-              <input
-                id="phoneInput"
-                type="tel"
-                name="phone_local"
-                required
-                inputmode="numeric"
-                autocomplete="tel"
-                placeholder="Enter your phone number"
-                class="flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-              >
+              <input id="phoneInput" type="tel" required
+                class="flex-1 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-600">
             </div>
-            <p class="text-xs text-gray-600 mt-1">
-              Enter numbers only. Your country code will be added automatically.
-            </p>
           </div>
         </div>
 
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">What do you want to learn</label>
-          <textarea
-            name="message"
-            rows="4"
-            placeholder="Tell us what you want to learn and your current level"
-            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-          ></textarea>
+          <textarea name="message" rows="4"
+            class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-600"></textarea>
         </div>
 
-        <button
-          type="submit"
-          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition"
-        >
+        <button type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl">
           Submit registration
         </button>
 
-        <p id="errorBox" class="hidden text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3"></p>
       </form>
 
-      <p class="text-center text-white/90 text-sm mt-6">
-        CoreCloud will use your details only to contact you about training.
-      </p>
-    </div>
+      <!-- Thank You Message -->
+      <div
+        id="thankYou"
+        class="hidden bg-white/95 rounded-3xl shadow-2xl px-6 lg:px-12 py-16 text-center mt-12"
+      >
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Thank you for registering
+        </h2>
+        <p class="text-lg text-gray-700">
+          Your details have been received successfully. We will contact you shortly with the next steps.
+        </p>
+      </div>
+
+      <!-- Hidden iframe to prevent page reload -->
+      <iframe name="hiddenFrame" class="hidden"></iframe>
+
+    </section>
+
   </main>
 
   <script>
     const countries = [
-      { name: "Italy", code: "+39" },
-      { name: "Nigeria", code: "+234" },
-      { name: "Germany", code: "+49" },
-      { name: "United Kingdom", code: "+44" },
-      { name: "United States", code: "+1" },
-      { name: "Canada", code: "+1" },
-      { name: "France", code: "+33" },
-      { name: "Spain", code: "+34" },
-      { name: "Netherlands", code: "+31" },
-      { name: "Belgium", code: "+32" },
-      { name: "Switzerland", code: "+41" },
-      { name: "Austria", code: "+43" },
-      { name: "Ireland", code: "+353" },
-      { name: "Portugal", code: "+351" },
-      { name: "Sweden", code: "+46" },
-      { name: "Norway", code: "+47" },
-      { name: "Denmark", code: "+45" },
-      { name: "Finland", code: "+358" },
-      { name: "Poland", code: "+48" },
-      { name: "Greece", code: "+30" },
-      { name: "Turkey", code: "+90" },
-      { name: "United Arab Emirates", code: "+971" },
-      { name: "Saudi Arabia", code: "+966" },
-      { name: "South Africa", code: "+27" },
-      { name: "Ghana", code: "+233" },
-      { name: "Kenya", code: "+254" }
-    ];
+  { name: "Afghanistan", code: "+93" },
+  { name: "Albania", code: "+355" },
+  { name: "Algeria", code: "+213" },
+  { name: "Andorra", code: "+376" },
+  { name: "Angola", code: "+244" },
+  { name: "Antigua and Barbuda", code: "+1" },
+  { name: "Argentina", code: "+54" },
+  { name: "Armenia", code: "+374" },
+  { name: "Australia", code: "+61" },
+  { name: "Austria", code: "+43" },
+  { name: "Azerbaijan", code: "+994" },
+
+  { name: "Bahamas", code: "+1" },
+  { name: "Bahrain", code: "+973" },
+  { name: "Bangladesh", code: "+880" },
+  { name: "Barbados", code: "+1" },
+  { name: "Belarus", code: "+375" },
+  { name: "Belgium", code: "+32" },
+  { name: "Belize", code: "+501" },
+  { name: "Benin", code: "+229" },
+  { name: "Bhutan", code: "+975" },
+  { name: "Bolivia", code: "+591" },
+  { name: "Bosnia and Herzegovina", code: "+387" },
+  { name: "Botswana", code: "+267" },
+  { name: "Brazil", code: "+55" },
+  { name: "Brunei", code: "+673" },
+  { name: "Bulgaria", code: "+359" },
+  { name: "Burkina Faso", code: "+226" },
+  { name: "Burundi", code: "+257" },
+
+  { name: "Cambodia", code: "+855" },
+  { name: "Cameroon", code: "+237" },
+  { name: "Canada", code: "+1" },
+  { name: "Cape Verde", code: "+238" },
+  { name: "Central African Republic", code: "+236" },
+  { name: "Chad", code: "+235" },
+  { name: "Chile", code: "+56" },
+  { name: "China", code: "+86" },
+  { name: "Colombia", code: "+57" },
+  { name: "Comoros", code: "+269" },
+  { name: "Congo", code: "+242" },
+  { name: "Costa Rica", code: "+506" },
+  { name: "Croatia", code: "+385" },
+  { name: "Cuba", code: "+53" },
+  { name: "Cyprus", code: "+357" },
+  { name: "Czech Republic", code: "+420" },
+
+  { name: "Denmark", code: "+45" },
+  { name: "Djibouti", code: "+253" },
+  { name: "Dominica", code: "+1" },
+  { name: "Dominican Republic", code: "+1" },
+
+  { name: "Ecuador", code: "+593" },
+  { name: "Egypt", code: "+20" },
+  { name: "El Salvador", code: "+503" },
+  { name: "Equatorial Guinea", code: "+240" },
+  { name: "Eritrea", code: "+291" },
+  { name: "Estonia", code: "+372" },
+  { name: "Eswatini", code: "+268" },
+  { name: "Ethiopia", code: "+251" },
+
+  { name: "Fiji", code: "+679" },
+  { name: "Finland", code: "+358" },
+  { name: "France", code: "+33" },
+
+  { name: "Gabon", code: "+241" },
+  { name: "Gambia", code: "+220" },
+  { name: "Georgia", code: "+995" },
+  { name: "Germany", code: "+49" },
+  { name: "Ghana", code: "+233" },
+  { name: "Greece", code: "+30" },
+  { name: "Grenada", code: "+1" },
+  { name: "Guatemala", code: "+502" },
+  { name: "Guinea", code: "+224" },
+  { name: "Guinea Bissau", code: "+245" },
+  { name: "Guyana", code: "+592" },
+
+  { name: "Haiti", code: "+509" },
+  { name: "Honduras", code: "+504" },
+  { name: "Hungary", code: "+36" },
+
+  { name: "Iceland", code: "+354" },
+  { name: "India", code: "+91" },
+  { name: "Indonesia", code: "+62" },
+  { name: "Iran", code: "+98" },
+  { name: "Iraq", code: "+964" },
+  { name: "Ireland", code: "+353" },
+  { name: "Israel", code: "+972" },
+  { name: "Italy", code: "+39" },
+
+  { name: "Jamaica", code: "+1" },
+  { name: "Japan", code: "+81" },
+  { name: "Jordan", code: "+962" },
+
+  { name: "Kazakhstan", code: "+7" },
+  { name: "Kenya", code: "+254" },
+  { name: "Kuwait", code: "+965" },
+  { name: "Kyrgyzstan", code: "+996" },
+
+  { name: "Laos", code: "+856" },
+  { name: "Latvia", code: "+371" },
+  { name: "Lebanon", code: "+961" },
+  { name: "Lesotho", code: "+266" },
+  { name: "Liberia", code: "+231" },
+  { name: "Libya", code: "+218" },
+  { name: "Liechtenstein", code: "+423" },
+  { name: "Lithuania", code: "+370" },
+  { name: "Luxembourg", code: "+352" },
+
+  { name: "Madagascar", code: "+261" },
+  { name: "Malawi", code: "+265" },
+  { name: "Malaysia", code: "+60" },
+  { name: "Maldives", code: "+960" },
+  { name: "Mali", code: "+223" },
+  { name: "Malta", code: "+356" },
+  { name: "Mauritania", code: "+222" },
+  { name: "Mauritius", code: "+230" },
+  { name: "Mexico", code: "+52" },
+  { name: "Moldova", code: "+373" },
+  { name: "Monaco", code: "+377" },
+  { name: "Mongolia", code: "+976" },
+  { name: "Montenegro", code: "+382" },
+  { name: "Morocco", code: "+212" },
+  { name: "Mozambique", code: "+258" },
+  { name: "Myanmar", code: "+95" },
+
+  { name: "Namibia", code: "+264" },
+  { name: "Nepal", code: "+977" },
+  { name: "Netherlands", code: "+31" },
+  { name: "New Zealand", code: "+64" },
+  { name: "Nicaragua", code: "+505" },
+  { name: "Niger", code: "+227" },
+  { name: "Nigeria", code: "+234" },
+  { name: "North Korea", code: "+850" },
+  { name: "Norway", code: "+47" },
+
+  { name: "Oman", code: "+968" },
+
+  { name: "Pakistan", code: "+92" },
+  { name: "Panama", code: "+507" },
+  { name: "Paraguay", code: "+595" },
+  { name: "Peru", code: "+51" },
+  { name: "Philippines", code: "+63" },
+  { name: "Poland", code: "+48" },
+  { name: "Portugal", code: "+351" },
+
+  { name: "Qatar", code: "+974" },
+
+  { name: "Romania", code: "+40" },
+  { name: "Russia", code: "+7" },
+  { name: "Rwanda", code: "+250" },
+
+  { name: "Saudi Arabia", code: "+966" },
+  { name: "Senegal", code: "+221" },
+  { name: "Serbia", code: "+381" },
+  { name: "Seychelles", code: "+248" },
+  { name: "Sierra Leone", code: "+232" },
+  { name: "Singapore", code: "+65" },
+  { name: "Slovakia", code: "+421" },
+  { name: "Slovenia", code: "+386" },
+  { name: "Somalia", code: "+252" },
+  { name: "South Africa", code: "+27" },
+  { name: "South Korea", code: "+82" },
+  { name: "Spain", code: "+34" },
+  { name: "Sri Lanka", code: "+94" },
+  { name: "Sudan", code: "+249" },
+  { name: "Sweden", code: "+46" },
+  { name: "Switzerland", code: "+41" },
+  { name: "Syria", code: "+963" },
+
+  { name: "Taiwan", code: "+886" },
+  { name: "Tanzania", code: "+255" },
+  { name: "Thailand", code: "+66" },
+  { name: "Togo", code: "+228" },
+  { name: "Trinidad and Tobago", code: "+1" },
+  { name: "Tunisia", code: "+216" },
+  { name: "Turkey", code: "+90" },
+
+  { name: "Uganda", code: "+256" },
+  { name: "Ukraine", code: "+380" },
+  { name: "United Arab Emirates", code: "+971" },
+  { name: "United Kingdom", code: "+44" },
+  { name: "United States", code: "+1" },
+  { name: "Uruguay", code: "+598" },
+  { name: "Uzbekistan", code: "+998" },
+
+  { name: "Venezuela", code: "+58" },
+  { name: "Vietnam", code: "+84" },
+
+  { name: "Yemen", code: "+967" },
+  { name: "Zambia", code: "+260" },
+  { name: "Zimbabwe", code: "+263" }
+];
 
     const countrySelect = document.getElementById("countrySelect");
     const dialCodeBox = document.getElementById("dialCodeBox");
     const phoneInput = document.getElementById("phoneInput");
-    const form = document.getElementById("registerForm");
-    const errorBox = document.getElementById("errorBox");
-
     const hiddenCountryName = document.getElementById("country_name");
     const hiddenCountryCode = document.getElementById("country_code");
     const hiddenFullPhone = document.getElementById("full_phone");
+    const form = document.getElementById("registerForm");
+    const thankYou = document.getElementById("thankYou");
 
-    countries
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .forEach((c) => {
-        const opt = document.createElement("option");
-        opt.value = c.name;
-        opt.textContent = c.name;
-        opt.dataset.code = c.code;
-        countrySelect.appendChild(opt);
-      });
-
-    function showError(message) {
-      errorBox.textContent = message;
-      errorBox.classList.remove("hidden");
-    }
-
-    function clearError() {
-      errorBox.textContent = "";
-      errorBox.classList.add("hidden");
-    }
-
-    function setDialCodeFromCountry() {
-      const selected = countrySelect.options[countrySelect.selectedIndex];
-      const code = selected && selected.dataset ? selected.dataset.code : "";
-
-      if (!code) {
-        dialCodeBox.textContent = "Code";
-        hiddenCountryName.value = "";
-        hiddenCountryCode.value = "";
-        return;
-      }
-
-      dialCodeBox.textContent = code;
-      hiddenCountryName.value = selected.value;
-      hiddenCountryCode.value = code;
-    }
+    countries.sort((a, b) => a.name.localeCompare(b.name)).forEach(c => {
+      const option = document.createElement("option");
+      option.value = c.name;
+      option.textContent = c.name;
+      option.dataset.code = c.code;
+      countrySelect.appendChild(option);
+    });
 
     phoneInput.addEventListener("input", () => {
       phoneInput.value = phoneInput.value.replace(/\D/g, "");
     });
 
     countrySelect.addEventListener("change", () => {
-      setDialCodeFromCountry();
-      clearError();
-    });
-
-    function validatePhone(localDigits) {
-      if (!localDigits) return "Please enter your phone number";
-      if (!/^\d+$/.test(localDigits)) return "Please use numbers only for the phone number";
-      if (localDigits.length < 6) return "Your phone number looks too short";
-      if (localDigits.length > 14) return "Your phone number looks too long";
-      return "";
-    }
-
-    form.addEventListener("submit", (e) => {
-      clearError();
-
       const selected = countrySelect.options[countrySelect.selectedIndex];
-      const code = selected && selected.dataset ? selected.dataset.code : "";
-      const local = phoneInput.value.trim();
-
-      if (!selected || !selected.value || !code) {
-        e.preventDefault();
-        showError("Please choose your country");
-        countrySelect.focus();
-        return;
-      }
-
-      const phoneError = validatePhone(local);
-      if (phoneError) {
-        e.preventDefault();
-        showError(phoneError);
-        phoneInput.focus();
-        return;
-      }
-
+      dialCodeBox.textContent = selected.dataset.code;
       hiddenCountryName.value = selected.value;
-      hiddenCountryCode.value = code;
-      hiddenFullPhone.value = code + local;
+      hiddenCountryCode.value = selected.dataset.code;
     });
 
-    setDialCodeFromCountry();
+    form.addEventListener("submit", () => {
+      hiddenFullPhone.value = hiddenCountryCode.value + phoneInput.value;
+      setTimeout(() => {
+        form.classList.add("hidden");
+        thankYou.classList.remove("hidden");
+        window.scrollTo({ top: thankYou.offsetTop, behavior: "smooth" });
+      }, 500);
+    });
   </script>
 
 </body>
